@@ -41,8 +41,10 @@ n2E = 1
 F1 = np.matrix(np.diag(f1.flat))
 F2 = np.matrix(np.diag(f2.flat))
 
-g1 = genComplexMatrix(N, 1)
-g2 = genComplexMatrix(N, 1)
+g1 = genComplexMatrix(1, 1)
+g1 = g1.flat[0]
+g2 = genComplexMatrix(1, 1)
+g2 = g2.flat[0]
 
 D1 = F1 * F1.H
 D2 = F2 * F2.H
@@ -66,5 +68,6 @@ data['g1'] = g1
 data['g2'] = g2
 data['D1'] = D1
 data['D2'] = D2
+
 
 np.savez("data/testdata10", N=N, f1=f1, f2=f2, nR=nR, n1=n1, n2=n2, L=L, n1E = n1E, n2E = n2E, F1=F1, F2=F2, g1=g1, g2=g2, D1=D1, D2=D2)
